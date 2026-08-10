@@ -76,110 +76,116 @@ dtb-$(CONFIG_ARCH_LAHAINA) += lahaina-rumi.dtb \
 endif
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
-dtbo-$(CONFIG_ARCH_WAIPIO) += waipio-rumi-overlay.dtbo \
-	waipio-mtp-pm8008-overlay.dtbo \
-	zeus-sm8450-pm8008-overlay.dtbo \
-	cupid-sm8450-pm8008-overlay.dtbo \
-	waipio-cdp-pm8008-overlay.dtbo \
-	waipio-qrd-pm8008-overlay.dtbo \
-	waipio-atp-pm8008-overlay.dtbo \
-	waipio-mtp-pm8010-overlay.dtbo \
-	waipio-cdp-pm8010-overlay.dtbo \
-	waipio-qrd-pm8010-overlay.dtbo \
-	waipio-qrd-pm8010-2s-overlay.dtbo \
-	waipio-atp-pm8010-overlay.dtbo \
-	waipiop-hdk-pm8010-overlay.dtbo \
-	waipio-lemur-mtp-pm8008-overlay.dtbo \
-	waipio-lemur-mtp-pm8010-overlay.dtbo \
-	waipio-lemur-cdp-pm8008-overlay.dtbo \
-	waipio-lemur-cdp-pm8010-overlay.dtbo \
-	waipio-kiwi-mtp-pm8008-overlay.dtbo \
-	waipio-kiwi-mtp-pm8010-overlay.dtbo \
-	waipio-kiwi-cdp-pm8008-overlay.dtbo \
-	waipio-kiwi-cdp-pm8010-overlay.dtbo \
-	waipio-mtp-68disp-pm8008-overlay.dtbo \
-	waipio-mtp-68disp-pm8010-overlay.dtbo \
-	waipio-cdp-xr-overlay.dtbo \
-	waipio-mtp-xr-overlay.dtbo \
-	waipio-cdp-xr-pcie-overlay.dtbo \
-	waipio-mtp-xr-pcie-overlay.dtbo
-
-waipio-rumi-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb
-waipio-mtp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-zeus-sm8450-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-cupid-sm8450-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-mtp-68disp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-cdp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-qrd-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-atp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-mtp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-mtp-68disp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-cdp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-qrd-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-qrd-pm8010-2s-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb
-waipio-atp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipiop-hdk-pm8010-overlay.dtbo-base := waipiop.dtb waipiop-v2.dtb
-waipio-lemur-mtp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-lemur-mtp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-lemur-cdp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-lemur-cdp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
-waipio-kiwi-mtp-pm8008-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-lte.dtb
-waipio-kiwi-mtp-pm8010-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-lte.dtb
-waipio-kiwi-cdp-pm8008-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-lte.dtb
-waipio-kiwi-cdp-pm8010-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-lte.dtb
-waipio-cdp-xr-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-le.dtb
-waipio-mtp-xr-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-le.dtb
-waipio-cdp-xr-pcie-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-le.dtb
-waipio-mtp-xr-pcie-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-le.dtb
+# Marble-only build: the upstream WAIPIO block covers SM8450 devices
+# (waipio reference boards, zeus/cupid = Xiaomi 12 series) - irrelevant
+# to marble (SM7475/ukee). Their merged dtbo chain (74 entries, 29MB)
+# overflows the 25MB dtbo partition (avbtool add_hash_footer rejects),
+# and their base/overlay combos bloat the build for nothing. The ukee
+# bases/overlays that marble needs live in the CAPE block below.
+# dtbo-$(CONFIG_ARCH_WAIPIO) += waipio-rumi-overlay.dtbo \
+# 	waipio-mtp-pm8008-overlay.dtbo \
+# 	zeus-sm8450-pm8008-overlay.dtbo \
+# 	cupid-sm8450-pm8008-overlay.dtbo \
+# 	waipio-cdp-pm8008-overlay.dtbo \
+# 	waipio-qrd-pm8008-overlay.dtbo \
+# 	waipio-atp-pm8008-overlay.dtbo \
+# 	waipio-mtp-pm8010-overlay.dtbo \
+# 	waipio-cdp-pm8010-overlay.dtbo \
+# 	waipio-qrd-pm8010-overlay.dtbo \
+# 	waipio-qrd-pm8010-2s-overlay.dtbo \
+# 	waipio-atp-pm8010-overlay.dtbo \
+# 	waipiop-hdk-pm8010-overlay.dtbo \
+# 	waipio-lemur-mtp-pm8008-overlay.dtbo \
+# 	waipio-lemur-mtp-pm8010-overlay.dtbo \
+# 	waipio-lemur-cdp-pm8008-overlay.dtbo \
+# 	waipio-lemur-cdp-pm8010-overlay.dtbo \
+# 	waipio-kiwi-mtp-pm8008-overlay.dtbo \
+# 	waipio-kiwi-mtp-pm8010-overlay.dtbo \
+# 	waipio-kiwi-cdp-pm8008-overlay.dtbo \
+# 	waipio-kiwi-cdp-pm8010-overlay.dtbo \
+# 	waipio-mtp-68disp-pm8008-overlay.dtbo \
+# 	waipio-mtp-68disp-pm8010-overlay.dtbo \
+# 	waipio-cdp-xr-overlay.dtbo \
+# 	waipio-mtp-xr-overlay.dtbo \
+# 	waipio-cdp-xr-pcie-overlay.dtbo \
+# 	waipio-mtp-xr-pcie-overlay.dtbo
+# 
+# waipio-rumi-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb
+# waipio-mtp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# zeus-sm8450-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# cupid-sm8450-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-mtp-68disp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-cdp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-qrd-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-atp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-mtp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-mtp-68disp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-cdp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-qrd-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-qrd-pm8010-2s-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb
+# waipio-atp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipiop-hdk-pm8010-overlay.dtbo-base := waipiop.dtb waipiop-v2.dtb
+# waipio-lemur-mtp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-lemur-mtp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-lemur-cdp-pm8008-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-lemur-cdp-pm8010-overlay.dtbo-base := waipio.dtb waipiop.dtb waipio-v2.dtb waipiop-v2.dtb waipio-lte.dtb
+# waipio-kiwi-mtp-pm8008-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-lte.dtb
+# waipio-kiwi-mtp-pm8010-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-lte.dtb
+# waipio-kiwi-cdp-pm8008-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-lte.dtb
+# waipio-kiwi-cdp-pm8010-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-lte.dtb
+# waipio-cdp-xr-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-le.dtb
+# waipio-mtp-xr-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-le.dtb
+# waipio-cdp-xr-pcie-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-le.dtb
+# waipio-mtp-xr-pcie-overlay.dtbo-base := waipio.dtb waipio-v2.dtb waipio-le.dtb
 else
-dtb-$(CONFIG_ARCH_WAIPIO) += waipio-rumi.dtb \
-	waipio-mtp-pm8008.dtb \
-	waipio-cdp-pm8008.dtb \
-	waipio-qrd-pm8008.dtb \
-	waipio-atp-pm8008.dtb \
-	waipio-mtp-pm8010.dtb \
-	waipio-cdp-pm8010.dtb \
-	waipio-qrd-pm8010.dtb \
-	waipio-qrd-pm8010-2s.dtb \
-	waipio-atp-pm8010.dtb \
-	waipio-cdp-xr.dtb \
-	waipio-mtp-xr.dtb \
-	waipiop-mtp-pm8008.dtb \
-	waipiop-cdp-pm8008.dtb \
-	waipiop-qrd-pm8008.dtb \
-	waipiop-mtp-pm8010.dtb \
-	waipiop-cdp-pm8010.dtb \
-	waipiop-qrd-pm8010.dtb \
-	waipiop-hdk-pm8010.dtb \
-	waipiop-qrd-pm8010-2s.dtb
+# dtb-$(CONFIG_ARCH_WAIPIO) += waipio-rumi.dtb \
+# 	waipio-mtp-pm8008.dtb \
+# 	waipio-cdp-pm8008.dtb \
+# 	waipio-qrd-pm8008.dtb \
+# 	waipio-atp-pm8008.dtb \
+# 	waipio-mtp-pm8010.dtb \
+# 	waipio-cdp-pm8010.dtb \
+# 	waipio-qrd-pm8010.dtb \
+# 	waipio-qrd-pm8010-2s.dtb \
+# 	waipio-atp-pm8010.dtb \
+# 	waipio-cdp-xr.dtb \
+# 	waipio-mtp-xr.dtb \
+# 	waipiop-mtp-pm8008.dtb \
+# 	waipiop-cdp-pm8008.dtb \
+# 	waipiop-qrd-pm8008.dtb \
+# 	waipiop-mtp-pm8010.dtb \
+# 	waipiop-cdp-pm8010.dtb \
+# 	waipiop-qrd-pm8010.dtb \
+# 	waipiop-hdk-pm8010.dtb \
+# 	waipiop-qrd-pm8010-2s.dtb
 # Waipio V2
-dtb-$(CONFIG_ARCH_WAIPIO) += waipio-v2-mtp-pm8008.dtb \
-	waipio-v2-cdp-pm8008.dtb \
-	waipio-v2-qrd-pm8008.dtb \
-	waipio-v2-atp-pm8008.dtb \
-	waipio-v2-mtp-pm8010.dtb \
-	waipio-v2-cdp-pm8010.dtb \
-	waipio-v2-qrd-pm8010.dtb \
-	waipio-v2-qrd-pm8010-2s.dtb \
-	waipio-v2-atp-pm8010.dtb \
-	waipiop-v2-mtp-pm8008.dtb \
-	waipiop-v2-cdp-pm8008.dtb \
-	waipiop-v2-qrd-pm8008.dtb \
-	waipiop-v2-mtp-pm8010.dtb \
-	waipiop-v2-cdp-pm8010.dtb \
-	waipiop-v2-qrd-pm8010.dtb \
-	waipiop-v2-hdk-pm8010.dtb \
-	waipiop-v2-qrd-pm8010-2s.dtb
-
+# dtb-$(CONFIG_ARCH_WAIPIO) += waipio-v2-mtp-pm8008.dtb \
+# 	waipio-v2-cdp-pm8008.dtb \
+# 	waipio-v2-qrd-pm8008.dtb \
+# 	waipio-v2-atp-pm8008.dtb \
+# 	waipio-v2-mtp-pm8010.dtb \
+# 	waipio-v2-cdp-pm8010.dtb \
+# 	waipio-v2-qrd-pm8010.dtb \
+# 	waipio-v2-qrd-pm8010-2s.dtb \
+# 	waipio-v2-atp-pm8010.dtb \
+# 	waipiop-v2-mtp-pm8008.dtb \
+# 	waipiop-v2-cdp-pm8008.dtb \
+# 	waipiop-v2-qrd-pm8008.dtb \
+# 	waipiop-v2-mtp-pm8010.dtb \
+# 	waipiop-v2-cdp-pm8010.dtb \
+# 	waipiop-v2-qrd-pm8010.dtb \
+# 	waipiop-v2-hdk-pm8010.dtb \
+# 	waipiop-v2-qrd-pm8010-2s.dtb
+# 
 # Waipio LTE
-dtb-$(CONFIG_ARCH_WAIPIO) += waipio-lte-mtp-pm8008.dtb \
-	waipio-lte-cdp-pm8008.dtb \
-	waipio-lte-qrd-pm8008.dtb \
-	waipio-lte-atp-pm8008.dtb \
-	waipio-lte-mtp-pm8010.dtb \
-	waipio-lte-cdp-pm8010.dtb \
-	waipio-lte-qrd-pm8010.dtb \
-	waipio-lte-atp-pm8010.dtb
+# dtb-$(CONFIG_ARCH_WAIPIO) += waipio-lte-mtp-pm8008.dtb \
+# 	waipio-lte-cdp-pm8008.dtb \
+# 	waipio-lte-qrd-pm8008.dtb \
+# 	waipio-lte-atp-pm8008.dtb \
+# 	waipio-lte-mtp-pm8010.dtb \
+# 	waipio-lte-cdp-pm8010.dtb \
+# 	waipio-lte-qrd-pm8010.dtb \
+# 	waipio-lte-atp-pm8010.dtb
 endif
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
@@ -241,58 +247,61 @@ dtb-$(CONFIG_ARCH_NEO) += neo-rumi.dtb \
 endif
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
-dtbo-$(CONFIG_ARCH_DIWALI) += diwali-rumi-overlay.dtbo \
-	diwali-idp-overlay.dtbo \
-	diwali-atp-overlay.dtbo \
-	diwali-qrd-overlay.dtbo \
-	diwali-idp-amoled-overlay.dtbo \
-	diwali-idp-usbc-overlay.dtbo \
-	diwali-idp-hsp-overlay.dtbo \
-	diwali-idp-nopmi-overlay.dtbo \
-	diwali-qrd-nopmi-overlay.dtbo \
-	diwali-qrd-pm8350b-overlay.dtbo \
-	ziyi-sm7450-overlay.dtbo
+# Marble-only build: the upstream DIWALI block covers SM8450 devices
+# (diwali = Xiaomi 12 Pro-family reference, ziyi) - irrelevant to marble
+# (SM7475/ukee). Commented out for the same reason as the WAIPIO block.
+# dtbo-$(CONFIG_ARCH_DIWALI) += diwali-rumi-overlay.dtbo \
+# 	diwali-idp-overlay.dtbo \
+# 	diwali-atp-overlay.dtbo \
+# 	diwali-qrd-overlay.dtbo \
+# 	diwali-idp-amoled-overlay.dtbo \
+# 	diwali-idp-usbc-overlay.dtbo \
+# 	diwali-idp-hsp-overlay.dtbo \
+# 	diwali-idp-nopmi-overlay.dtbo \
+# 	diwali-qrd-nopmi-overlay.dtbo \
+# 	diwali-qrd-pm8350b-overlay.dtbo \
+# 	ziyi-sm7450-overlay.dtbo
 
-diwali-rumi-overlay.dtbo-base := diwali.dtb
-diwali-idp-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
-diwali-atp-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
-diwali-qrd-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
-diwali-idp-amoled-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
-diwali-idp-usbc-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
-diwali-idp-hsp-overlay.dtbo-base := diwali-hsp.dtb diwalip.dtb diwali-lte.dtb
-diwali-idp-nopmi-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
-diwali-qrd-nopmi-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
-diwali-qrd-pm8350b-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
-ziyi-sm7450-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
+# diwali-rumi-overlay.dtbo-base := diwali.dtb
+# diwali-idp-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
+# diwali-atp-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
+# diwali-qrd-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
+# diwali-idp-amoled-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
+# diwali-idp-usbc-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
+# diwali-idp-hsp-overlay.dtbo-base := diwali-hsp.dtb diwalip.dtb diwali-lte.dtb
+# diwali-idp-nopmi-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
+# diwali-qrd-nopmi-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
+# diwali-qrd-pm8350b-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
+# ziyi-sm7450-overlay.dtbo-base := diwali.dtb diwalip.dtb diwali-lte.dtb
 else
-dtb-$(CONFIG_ARCH_DIWALI) += diwali-rumi.dtb \
-	diwali-idp.dtb \
-	diwali-atp.dtb \
-	diwali-qrd.dtb \
-	diwali-idp-amoled.dtb \
-	diwali-idp-usbc.dtb \
-	diwali-idp-hsp.dtb \
-	diwali-idp-nopmi.dtb \
-	diwali-qrd-nopmi.dtb \
-	diwali-qrd-pm8350b.dtb \
-	diwalip-idp.dtb \
-	diwalip-atp.dtb \
-	diwalip-qrd.dtb \
-	diwalip-idp-amoled.dtb \
-	diwalip-idp-usbc.dtb \
-	diwalip-idp-hsp.dtb \
-	diwalip-idp-nopmi.dtb \
-	diwalip-qrd-nopmi.dtb \
-	diwalip-qrd-pm8350b.dtb \
-	diwali-lte-idp.dtb \
-	diwali-lte-atp.dtb \
-	diwali-lte-qrd.dtb \
-	diwali-lte-idp-amoled.dtb \
-	diwali-lte-idp-usbc.dtb \
-	diwali-lte-idp-hsp.dtb \
-	diwali-lte-idp-nopmi.dtb \
-	diwali-lte-qrd-nopmi.dtbi \
-	diwali-lte-qrd-pm8350b.dtb
+# dtb-$(CONFIG_ARCH_DIWALI) += diwali-rumi.dtb \
+# 	diwali-idp.dtb \
+# 	diwali-atp.dtb \
+# 	diwali-qrd.dtb \
+# 	diwali-idp-amoled.dtb \
+# 	diwali-idp-usbc.dtb \
+# 	diwali-idp-hsp.dtb \
+# 	diwali-idp-nopmi.dtb \
+# 	diwali-qrd-nopmi.dtb \
+# 	diwali-qrd-pm8350b.dtb \
+# 	diwalip-idp.dtb \
+# 	diwalip-atp.dtb \
+# 	diwalip-qrd.dtb \
+# 	diwalip-idp-amoled.dtb \
+# 	diwalip-idp-usbc.dtb \
+# 	diwalip-idp-hsp.dtb \
+# 	diwalip-idp-nopmi.dtb \
+# 	diwalip-qrd-nopmi.dtb \
+# 	diwalip-qrd-pm8350b.dtb \
+# 	diwali-lte-idp.dtb \
+# 	diwali-lte-atp.dtb \
+# 	diwali-lte-qrd.dtb \
+# 	diwali-lte-idp-amoled.dtb \
+# 	diwali-lte-idp-usbc.dtb \
+# 	diwali-lte-idp-hsp.dtb \
+# 	diwali-lte-idp-nopmi.dtb \
+# 	diwali-lte-qrd-nopmi.dtbi \
+# 	diwali-lte-qrd-pm8350b.dtb
 endif
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
