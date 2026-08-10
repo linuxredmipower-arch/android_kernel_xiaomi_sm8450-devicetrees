@@ -296,24 +296,13 @@ dtb-$(CONFIG_ARCH_DIWALI) += diwali-rumi.dtb \
 endif
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
-dtbo-$(CONFIG_ARCH_CAPE) += cape-mtp-pm8008-overlay.dtbo \
-        cape-mtp-120fps-pm8008-overlay.dtbo \
-	cape-mtp-nodisplay-pm8008-overlay.dtbo \
-        cape-cdp-pm8008-overlay.dtbo \
-        cape-cdp-qhd-pm8008-overlay.dtbo \
-        cape-atp-pm8008-overlay.dtbo \
-        cape-qrd-pm8008-overlay.dtbo \
-        cape-mtp-pm8010-overlay.dtbo \
-        cape-mtp-120fps-pm8010-overlay.dtbo \
-	cape-mtp-nodisplay-pm8010-overlay.dtbo \
-        cape-cdp-pm8010-overlay.dtbo \
-        cape-atp-pm8010-overlay.dtbo \
-        cape-qrd-pm8010-overlay.dtbo \
-        cape-cdp-qhd-pm8010-overlay.dtbo \
-	cape-kiwi-mtp-pm8008-overlay.dtbo \
-	cape-kiwi-mtp-pm8010-overlay.dtbo \
-	cape-kiwi-cdp-pm8008-overlay.dtbo \
-	cape-kiwi-cdp-pm8010-overlay.dtbo \
+# Marble-only build: the upstream CAPE block also lists cape/kiwi and the
+# sm8475 devices (unicorn/thor/mayfly/mondrian/zizhan/diting). Their
+# overlay/base combos fail ufdt_apply_overlay fixups (L3I/pm8010j_l5
+# symbols missing in cape bases) which vendor/miku's merge_dtbs.py step 4
+# validates with check=True, aborting the build. marble (SM7475/ukee)
+# only needs the ukee bases and the marble overlay, so keep those only.
+dtbo-$(CONFIG_ARCH_CAPE) += \
 	ukee-atp-pm8008-overlay.dtbo \
 	ukee-atp-pm8010-overlay.dtbo \
 	ukee-cdp-pm8008-overlay.dtbo \
@@ -328,32 +317,8 @@ dtbo-$(CONFIG_ARCH_CAPE) += cape-mtp-pm8008-overlay.dtbo \
 	ukee-mtp-nodisplay-pm8010-overlay.dtbo \
 	ukee-qrd-pm8008-overlay.dtbo \
 	ukee-qrd-pm8010-overlay.dtbo \
-	unicorn-sm8475-pm8008-overlay.dtbo \
-	thor-sm8475-pm8008-overlay.dtbo \
-	mayfly-sm8475-pm8008-overlay.dtbo \
-	mondrian-sm8475-pm8008-overlay.dtbo \
-	marble-sm7475-pm8008-overlay.dtbo \
-	zizhan-sm8475-pm8008-overlay.dtbo \
-	diting-sm8475-pm8008-overlay.dtbo
+	marble-sm7475-pm8008-overlay.dtbo
 
-cape-mtp-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-mtp-120fps-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-mtp-nodisplay-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-cdp-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-cdp-qhd-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-atp-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-qrd-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-mtp-pm8010-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-mtp-120fps-pm8010-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-mtp-nodisplay-pm8010-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-cdp-pm8010-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-cdp-qhd-pm8010-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-atp-pm8010-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-qrd-pm8010-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-kiwi-mtp-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-kiwi-mtp-pm8010-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-kiwi-cdp-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-cape-kiwi-cdp-pm8010-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
 ukee-atp-pm8008-overlay.dtbo-base := ukee.dtb
 ukee-atp-pm8010-overlay.dtbo-base := ukee.dtb
 ukee-cdp-pm8008-overlay.dtbo-base := ukee.dtb
@@ -368,43 +333,10 @@ ukee-mtp-nodisplay-pm8008-overlay.dtbo-base := ukee.dtb
 ukee-mtp-nodisplay-pm8010-overlay.dtbo-base := ukee.dtb
 ukee-qrd-pm8008-overlay.dtbo-base := ukee.dtb
 ukee-qrd-pm8010-overlay.dtbo-base := ukee.dtb
-unicorn-sm8475-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-thor-sm8475-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-mayfly-sm8475-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-mondrian-sm8475-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
 marble-sm7475-pm8008-overlay.dtbo-base := ukee.dtb
-zizhan-sm8475-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
-diting-sm8475-pm8008-overlay.dtbo-base := cape.dtb cape-v2.dtb capep.dtb
 
 else
-dtb-$(CONFIG_ARCH_CAPE) += cape-mtp-pm8008.dtb \
-	cape-mtp-120fps-pm8008.dtb \
-	cape-mtp-nodisplay-pm8008.dtb \
-        cape-cdp-pm8008.dtb \
-        cape-cdp-qhd-pm8008.dtb \
-        cape-atp-pm8008.dtb \
-        cape-qrd-pm8008.dtb \
-        cape-v2-mtp-pm8008.dtb \
-        cape-v2-cdp-pm8008.dtb \
-        cape-v2-atp-pm8008.dtb \
-        cape-v2-qrd-pm8008.dtb \
-	capep-mtp-pm8008.dtb \
-	capep-cdp-pm8008.dtb \
-	capep-atp-pm8008.dtb \
-        cape-mtp-pm8010.dtb \
-        cape-mtp-120fps-pm8010.dtb \
-	cape-mtp-nodisplay-pm8010.dtb \
-        cape-cdp-pm8010.dtb \
-        cape-cdp-qhd-pm8010.dtb \
-        cape-atp-pm8010.dtb \
-        cape-qrd-pm8010.dtb \
-        cape-v2-mtp-pm8010.dtb \
-        cape-v2-cdp-pm8010.dtb \
-        cape-v2-atp-pm8010.dtb \
-        cape-v2-qrd-pm8010.dtb \
-	capep-mtp-pm8010.dtb \
-	capep-cdp-pm8010.dtb \
-	capep-atp-pm8010.dtb \
+dtb-$(CONFIG_ARCH_CAPE) += \
 	ukee-atp-pm8008.dtb \
 	ukee-atp-pm8010.dtb \
 	ukee-cdp-pm8008.dtb \
