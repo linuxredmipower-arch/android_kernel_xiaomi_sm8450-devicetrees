@@ -2,9 +2,18 @@
 
 基于 LineageOS `android_kernel_xiaomi_sm8450-devicetrees`（lineage-22.2）的 fork，为 Miku UI TDA（Android 15, marble/POCO F5, SM7475/ukee）裁剪。
 
+## 平台声明
+
+- **平台**: Android 15（trunk_staging / Baklava, userdebug）
+- **适配分支**: `miku-a15`（本仓库主分支，原 `miku-marble` 改名）
+- **版本标记**: tag `a15`（2026-08-12 打标）
+- **基线**: LineageOS 22.2 + Miku UI Vampire v3（A15 线）
+- **A16 迁移**: 下一轮切 Android 16 时本分支冻结，新平台另建 `miku-a16` 分支
+
 ## 分支
 
-- `miku-marble` — 裁剪分支（本仓库主分支）
+- `miku-a15` — 裁剪分支（本仓库主分支）
+- `lineage-22.2` — LineageOS 官方跟踪
 
 ## 裁剪内容（相对上游）
 
@@ -24,5 +33,5 @@
 ```shell
 git remote add miku https://github.com/linuxredmipower-arch/android_kernel_xiaomi_sm8450-devicetrees.git
 # repo sync 后默认是 LineageOS 官方，需 fetch 本 fork 分支：
-git fetch miku miku-marble && git checkout miku-marble
+git fetch miku miku-a15 && git checkout miku-a15
 ```
