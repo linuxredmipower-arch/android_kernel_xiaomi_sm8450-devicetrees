@@ -2,6 +2,16 @@
 
 &waipio_snd {
 	qcom,model = "ukee-mtp-snd-card";
+	/*
+	 * marble (ukee) has no WSA883x speakers and no SWR haptics: the
+	 * speaker amps are AW882xx (driven by PAL, not an ASoC codec) and
+	 * haptics is the PM8350B HV haptics.  Keeping the non-existent
+	 * codecs in asoc-codec makes snd_soc_register_card() defer forever,
+	 * so the sound card never registers (PAL then aborts the audio HAL).
+	 */
+	asoc-codec = <&stub_codec>, <&lpass_cdc>, <&wcd938x_codec>;
+	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc", "wcd938x_codec";
+	qcom,wsa-max-devs = <0>;
 };
 
 &adsp_loader {
