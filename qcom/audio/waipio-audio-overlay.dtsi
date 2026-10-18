@@ -5,7 +5,7 @@
 #include "waipio-lpi.dtsi"
 
 &lpass_cdc {
-	qcom,num-macros = <4>;
+	qcom,num-macros = <3>;
 	qcom,lpass-cdc-version = <6>;
 	#address-cells = <1>;
 	#size-cells = <1>;
@@ -347,8 +347,8 @@
 		qcom,model = "waipio-mtp-snd-card";
 		qcom,msm-mi2s-master = <1>, <1>, <1>, <1>, <1>, <1>;
 		qcom,mi2s-tdm-is-hw-vote-needed = <1>, <0>, <1>, <0>, <0>, <0>;
-		qcom,wcn-bt = <1>;
-		qcom,ext-disp-audio-rx = <1>;
+		qcom,wcn-bt = <0>;
+		qcom,ext-disp-audio-rx = <0>;
 		qcom,tdm-max-slots = <8>;
 		qcom,tdm-clk-attribute = <0x1>, <0x1>, <0x1>, <0x1>, <0x1>, <0x1>;
 		qcom,mi2s-clk-attribute = <0x1>, <0x1>, <0x1>, <0x1>, <0x1>, <0x1>;
