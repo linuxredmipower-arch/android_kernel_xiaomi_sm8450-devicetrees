@@ -154,10 +154,12 @@
 };
 
 &qupv3_se4_spi {
-	m16t-touch@0 {
-		panel = <&dsi_m16t_36_02_0a_dsc_vid &dsi_m16t_36_0d_0b_dsc_vid
-			&dsi_r66451_amoled_video>;
-	};
+	/*
+	 * Do not populate the "panel" phandle on the touch node: the A17
+	 * mi_disp stack does not register these panels via of_drm_find_panel(),
+	 * which made the Goodix driver defer forever instead of falling back
+	 * to qcom,touch-active.  The parent node carries touch-active instead.
+	 */
 };
 
 &soc {
