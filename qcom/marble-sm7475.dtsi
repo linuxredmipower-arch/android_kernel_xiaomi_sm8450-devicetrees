@@ -268,6 +268,10 @@
 		goodix,panel-max-p = <4096>;
 		goodix,panel-id-gpio-a = <&tlmm 119 GPIO_ACTIVE_LOW>;
 		goodix,panel-id-gpio-b = <&tlmm 117 GPIO_ACTIVE_LOW>;
+		/* The driver only understands the non-suffixed names; the a/b
+		 * variants below are kept for the stock MIUI driver. */
+		goodix,firmware-name = "goodix_firmware_TM.bin";
+		goodix,config-name = "goodix_cfg_group_TM.bin";
 		goodix,firmware-namea = "goodix_firmware_TM.bin";
 		goodix,firmware-nameb = "goodix_firmware_TM_Second.bin";
 		goodix,config-namea = "goodix_cfg_group_TM.bin";
